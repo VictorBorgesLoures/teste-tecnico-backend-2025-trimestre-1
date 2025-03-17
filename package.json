@@ -1,0 +1,31 @@
+{
+  "name": "teste-tecnico-backend",
+  "version": "1.0.0",
+  "description": "Teste técnico para vaga de backend na empresa Eaipago.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "build": "tsc",
+    "prod": "ts-node -r tsconfig-paths/register index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorBorgesLoures/teste-tecnico-backend-2025-trimestre-1.git"
+  },
+  "author": "vborges",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorBorgesLoures/teste-tecnico-backend-2025-trimestre-1/issues"
+  },
+  "homepage": "https://github.com/VictorBorgesLoures/teste-tecnico-backend-2025-trimestre-1#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}
