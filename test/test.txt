@@ -1,0 +1,3 @@
+# Run this command to upload the file
+
+curl -F video=@test/video-test.mkv http://localhost:3000/upload/video

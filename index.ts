@@ -1,11 +1,13 @@
 import 'dotenv/config'
 import express from 'express'
+import middlewares from '@src/middlewares'
+import routes from '@src/routes'
 
 let app = express()
 
-app.get("/", (req, res, next) => {
-    res.send("Server running...")
-})
+middlewares(app)
+
+routes(app)
 
 app.listen(process.env.PORT, error => {
     if (error)
