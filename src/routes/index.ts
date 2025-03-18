@@ -4,7 +4,7 @@ import videoRoutes from '@src/routes/video'
 export default (app: Express) => {
 
     app.get('/', (req, res, next) => {
-        res.send("test")
+        res.status(200).send("Server is live")
     })
 
     app.use('/', videoRoutes())

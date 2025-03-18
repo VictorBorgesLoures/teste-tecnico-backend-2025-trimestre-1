@@ -30,15 +30,15 @@ export default class MulterStorage extends Storage {
                     if(err)
                         resolve(null)
                     else {
-                        console.log("Getting from file")
+                        console.log(`Getting from file: ${request.params['filename']}`)
                         this._fileCache.set(request.params['filename'], data)
                         resolve(data)
+                        return
                     }    
                 })
-            }
-            else {
-                console.log("Getting from cache")
-                resolve(streamCache as null)
+            } else {
+                console.log(`Getting from cache: ${request.params['filename']}`)
+                resolve(streamCache as Buffer<ArrayBufferLike>)
             }
         })
     }
@@ -53,7 +53,7 @@ export default class MulterStorage extends Storage {
                     if (request.file.filename === undefined) {
                         reject(Error("Cannot set filename"))
                     } else
-                        fs.readFile(path.join(process.cwd(), 'upload', request.file.filename),'utf8', (err, data) => {
+                        fs.readFile(path.join(process.cwd(), 'upload', request.file.filename), (err, data) => {
                             if(err) {
                                 reject(Error("Unable to read file"))
                             }
