@@ -77,8 +77,13 @@ make build name=<image name>
 
 Rodar a imagem do docker
 ```
-make run name=<image name>
+make bake name=<image name>
 ```
 
 > [!NOTE]
 > "image name" deve ser o mesmo dos comandos build e run
+
+Rodar o arquivo docker-compose.yml
+```
+make compose
+```

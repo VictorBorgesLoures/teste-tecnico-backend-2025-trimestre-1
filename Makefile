@@ -2,6 +2,10 @@
 build: 
 	docker build --progress=plain -t ${name} .
 
-.PRONY: run
-run:
+.PRONY: bake
+bake:
 	docker run -p 3000:3000 ${name}
+
+.PRONY: compose
+compose:
+	docker compose -f 'docker-compose.yml' up

@@ -1,0 +1,11 @@
+services:
+  app:
+    image: 'node:22-alpine'
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    command: 'npm run prod'

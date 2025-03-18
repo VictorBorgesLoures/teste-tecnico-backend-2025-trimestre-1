@@ -2,8 +2,8 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-RUN mkdir upload
-RUN mkdir test
+RUN mkdir -p upload
+RUN mkdir -p test
 
 COPY ./dist .
 COPY ./package.json .
