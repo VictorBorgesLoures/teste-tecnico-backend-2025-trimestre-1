@@ -53,30 +53,29 @@ O tempo proposto para a conclusão deste desafio técnico é de 1 (um) dia.
 
 ### Ambiente de desenvolvimento
 
-Para rodar os arquivos com nodemon
+Rodar os arquivos com nodemon
 ```
 npm run dev
 ```
 
-Para construir os arquivos para prod
+### Compilar arquivos 
+
+Construir os arquivos para prod
 ```
 npm run build
 ```
 
-Para criar a imagem do docker
-```
-make build
-```
+### Ambiente do docker
 
 > [!IMPORTANT]
-> O docker utiliza os arquivos da pasta dist
+> O docker utiliza os arquivos da pasta dist, ou seja, deve ser executado o comando `npm run build`
 
-Para criar a imagem do docker
+Criar a imagem do docker
 ```
 make build name=<image name>
 ```
 
-Para rodar a imagem do docker
+Rodar a imagem do docker
 ```
 make run name=<image name>
 ```
