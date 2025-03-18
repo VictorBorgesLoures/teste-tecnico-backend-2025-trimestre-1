@@ -5,19 +5,19 @@ Teste técnico para a posição de Backend Dev. Edição do primeiro trimestre d
 
 A ideia é bem simples:
 
-- [ ] uma rota `POST /upload/video` que recebe um **único vídeo** com limite de 10MB e
-    - [ ] retornando o código de status 400 em caso de arquivo com tipo diferente de vídeo
-    - [ ] retornando o código de status 400 em caso de arquivo com tamanho maior que 10MB
-    - [ ] retornando o código de status 204 em caso de sucesso
-- [ ] uma rota `GET /static/video/:filename` que pode receber um Range por cabeçalho para indicar o offset de streaming
-    - [ ] retornando o código de status 404 em caso de não existência de um arquivo
-    - [ ] retornando o conteúdo completo caso nenhum range seja especificado com código de status 200 em caso o arquivo exista no servidor
-    - [ ] retornando a fatia desejada do conteúdo caso o range seja especificado com código de status 206
+- [x] uma rota `POST /upload/video` que recebe um **único vídeo** com limite de 10MB e
+    - [x] retornando o código de status 400 em caso de arquivo com tipo diferente de vídeo
+    - [x] retornando o código de status 400 em caso de arquivo com tamanho maior que 10MB
+    - [x] retornando o código de status 204 em caso de sucesso
+- [x] uma rota `GET /static/video/:filename` que pode receber um Range por cabeçalho para indicar o offset de streaming
+    - [x] retornando o código de status 404 em caso de não existência de um arquivo
+    - [x] retornando o conteúdo completo caso nenhum range seja especificado com código de status 200 em caso o arquivo exista no servidor
+    - [x] retornando a fatia desejada do conteúdo caso o range seja especificado com código de status 206
     caso o arquivo exista no servidor
 
 Para infra, vamos usar o seguinte conjunto:
 
-- [ ] um arquivo `Dockerfile` para fazer o build da imagem a partir da imagem `node:22-alpine`;
+- [x] um arquivo `Dockerfile` para fazer o build da imagem a partir da imagem `node:22-alpine`;
 - [ ] um arquivo `docker-compose.yml` para compor um ambiente com algum serviço de cache de sua escolha.
 
 ```plain
@@ -47,3 +47,39 @@ Este teste busca avaliar as seguintes competências:
 - Capacidade de lidar com contêineres Docker.
 
 O tempo proposto para a conclusão deste desafio técnico é de 1 (um) dia.
+
+
+## Comandos
+
+### Ambiente de desenvolvimento
+
+Para rodar os arquivos com nodemon
+```
+npm run dev
+```
+
+Para construir os arquivos para prod
+```
+npm run build
+```
+
+Para criar a imagem do docker
+```
+make build
+```
+
+> [!IMPORTANT]
+> O docker utiliza os arquivos da pasta dist
+
+Para criar a imagem do docker
+```
+make build name=<image name>
+```
+
+Para rodar a imagem do docker
+```
+make run name=<image name>
+```
+
+> [!NOTE]
+> "image name" deve ser o mesmo dos comandos build e run
