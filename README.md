@@ -18,7 +18,7 @@ A ideia é bem simples:
 Para infra, vamos usar o seguinte conjunto:
 
 - [x] um arquivo `Dockerfile` para fazer o build da imagem a partir da imagem `node:22-alpine`;
-- [ ] um arquivo `docker-compose.yml` para compor um ambiente com algum serviço de cache de sua escolha.
+- [x] um arquivo `docker-compose.yml` para compor um ambiente com algum serviço de cache de sua escolha.
 
 ```plain
 A ideia inicial é que os arquivos sejam armazenados dentro do volume do container da aplicação.
